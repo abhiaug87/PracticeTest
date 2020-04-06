@@ -49,7 +49,7 @@ namespace Tests.Steps
         {
             po.occupation.Click();
             po.nametxt.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace+ Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace);
-            po.nametxt.SendKeys("Abhi");
+            po.nametxt.SendKeys("Abhishek");
             po.nametxt.SendKeys(Keys.Tab + Keys.Enter);
         }
 
