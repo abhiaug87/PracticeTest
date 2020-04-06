@@ -342,6 +342,9 @@ namespace Tests.PageObjects
 
         [FindsBy(How = How.CssSelector, Using = "div#has_occupation")]
         public IWebElement occupation;
+        
+        [FindsBy(How = How.CssSelector, Using = "div.profile-section-title")]
+        public IWebElement prefferedname;
 
         [FindsBy(How = How.Id, Using = "main-menu-button")]
         public IWebElement menubtn;
