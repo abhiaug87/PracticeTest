@@ -37,8 +37,9 @@ namespace Tests.Steps
             Driver.SwitchTo().Frame(0);
             po.profile.SendKeys(Keys.Enter + Keys.Tab + Keys.Enter);
             Assert.True(po.personal.Displayed, "Element is not displayed");
-            Driver.SwitchTo().Frame("ASB.58c9b2b87b9d150d1c7dd287_v1.1.7_58d98a132d7fb9101018fc3a-1");
-            wait.Until(Driver => Driver.FindElement(By.CssSelector("div#has_occupation")));
+            wait.Until(Driver => Driver.FindElement(By.Id("anti_sizzle_do_not_remove")));
+            Driver.SwitchTo().Frame("ASB.58c9b2b87b9d150d1c7dd287_v1.1.8_58d98a132d7fb9101018fc3a-1");
+            wait.Until(Driver => Driver.FindElement(By.CssSelector("div.profile-section-title")));
         }
 
 
