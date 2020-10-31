@@ -4,7 +4,8 @@
     {
         public static class DriverSettings
         {
-            public static string BinaryLocationChrome = @"C:\Users\abhishek.k\source\repos\Tests\Tests\Drivers";
+            public static string BinaryLocationChrome = @"C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\Drivers\chromedriver_win32";
+            //public static string BinaryLocationChrome = @"../Tests/bin/Debug/";
 
             public static string ChromeBrowser = "Chrome";
             public static int DefaultWaitTime = 3000;

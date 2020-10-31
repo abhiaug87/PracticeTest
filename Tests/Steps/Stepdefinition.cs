@@ -4,8 +4,12 @@ using Tests.Utilities;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
+using Newtonsoft.Json.Linq;
 using OpenQA.Selenium.Interactions;
 using System;
+using Newtonsoft.Json;
+using System.IO;
+using Utf8Json;
 
 namespace Tests.Steps
 {
@@ -14,8 +18,9 @@ namespace Tests.Steps
     {
         Pageobjects po = new Pageobjects(Driver);
         WebDriverWait wait = new WebDriverWait(Driver, new TimeSpan(0, 0, 5));
+        JSON read = new JSON();
 
-        [Given(@"I am on the main page")]
+[Given(@"I am on the main page")]
         public void GivenIAmOnTheMainPage()
         {
             Driver.Navigate().GoToUrl(CommonConstants.ApplicationSettings.Url);
@@ -25,8 +30,8 @@ namespace Tests.Steps
         public void WhenIClickLogin()
         {
             po.loginbtn.Click();
-            po.usr.SendKeys("abhiaug87");
-            po.pass.SendKeys("Bhaiya83");
+            po.usr.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "username"));
+            po.pass.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "password"));
             po.next.Click();
             wait.Until(Driver => Driver.FindElement(By.XPath("//*[@id='layout']/tbody/tr[1]/td[1]/div")));
         }
@@ -49,7 +54,7 @@ namespace Tests.Steps
         {
             po.prefferedname.Click();
             po.nametxt.SendKeys(Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace+ Keys.Backspace + Keys.Backspace + Keys.Backspace + Keys.Backspace);
-            po.nametxt.SendKeys("Abhishek");
+            po.nametxt.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "name"));
             po.nametxt.SendKeys(Keys.Tab + Keys.Enter);
         }
 
@@ -68,7 +73,10 @@ namespace Tests.Steps
         [When(@"I enter login credentials to get access to the portal")]
         public void WhenIEnterLoginCredentialsToGetAccessToThePortal()
         {
-            Assert.True(po.forgot.Text.Contains("Forgot?"), "Text not displayed");
+            //var json = JObject.Parse(File.ReadAllText("../Tests/Utilities/Text.json"));
+            //using (StreamReader file = File.OpenText("../Tests/Utilities/Text.json"))
+            //using (JsonTextReader reader = new JsonTextReader(file))
+            Assert.True(po.forgot.Text.Contains(read.jsonReader("", "")), "Text not displayed");
             Assert.True(po.otherlogin.Text.Contains("Other login options"), "Text not displayed");
             Assert.True(po.signup.Text.Contains("Sign Up"), "Text not displayed");
             Assert.True(po.noaccount.Text.Contains("Don't have an account?"), "Text not displayed");

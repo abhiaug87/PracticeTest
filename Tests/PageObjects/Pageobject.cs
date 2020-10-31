@@ -313,6 +313,9 @@ namespace Tests.PageObjects
         [FindsBy(How = How.Id, Using = "dUsername")]
         public IWebElement usr;
 
+        [FindsBy(How = How.XPath, Using = "//*[@id='layout']/tbody/tr[1]/td[1]/div")]
+        public IWebElement pagewait;
+
         [FindsBy(How = How.Id, Using = "password")]
         public IWebElement pass;
 
