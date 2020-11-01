@@ -6,7 +6,7 @@ namespace Tests.Utilities
     {
         public static class DriverSettings
         {
-            static string filepath = Path.GetFileNameWithoutExtension("chromedriver.exe");
+           public static string filepath = Path.GetFileNameWithoutExtension("chromedriver.exe");
             //public static string BinaryLocationChrome = @"C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\Drivers\chromedriver_win32";
             public static string BinaryLocationChrome = filepath;
 
