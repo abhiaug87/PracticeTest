@@ -1,11 +1,14 @@
-﻿namespace Tests.Utilities
+﻿using System.IO;
+
+namespace Tests.Utilities
 {
     public static class CommonConstants
     {
         public static class DriverSettings
         {
-            public static string BinaryLocationChrome = @"C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\Drivers\chromedriver_win32";
-            //public static string BinaryLocationChrome = @"../Tests/bin/Debug/";
+            static string filepath = Path.GetFileNameWithoutExtension("chromedriver.exe");
+            //public static string BinaryLocationChrome = @"C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\Drivers\chromedriver_win32";
+            public static string BinaryLocationChrome = filepath;
 
             public static string ChromeBrowser = "Chrome";
             public static int DefaultWaitTime = 3000;
