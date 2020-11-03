@@ -14,10 +14,10 @@ namespace Tests.Utilities
             public static int DefaultWaitTime = 3000;
         }
 
-        public static class ApplicationSettings
-        {
-            public static string BaseUrl = "https://au.unleashedsoftware.com/v2/Account/LogOn";
-            public static string Url = "https://www.asb.co.nz/";
-        }
+        //public class ApplicationSettings
+        //{
+          //  public static string BaseUrl = "https://au.unleashedsoftware.com/v2/Account/LogOn";
+           // public static string Url = "https://www.asb.co.nz/";
+     //   }
     }
 }

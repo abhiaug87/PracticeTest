@@ -23,7 +23,8 @@ namespace Tests.Steps
 [Given(@"I am on the main page")]
         public void GivenIAmOnTheMainPage()
         {
-            Driver.Navigate().GoToUrl(CommonConstants.ApplicationSettings.Url);
+            //Driver.Navigate().GoToUrl(CommonConstants.ApplicationSettings.Url);
+            Driver.Navigate().GoToUrl(read.jsonReader("../Tests/Utilities/Data.json", "url"));
         }
 
         [When(@"I click login")]
@@ -67,16 +68,14 @@ namespace Tests.Steps
         [Given(@"I am on the login page")]
         public void GivenIAmOnTheLoginPage()
         {
-            Driver.Navigate().GoToUrl(CommonConstants.ApplicationSettings.BaseUrl);
+            // Driver.Navigate().GoToUrl(CommonConstants.ApplicationSettings.BaseUrl);
+            Driver.Navigate().GoToUrl(read.jsonReader("../Tests/Utilities/Data.json", "url"));
         }
 
         [When(@"I enter login credentials to get access to the portal")]
         public void WhenIEnterLoginCredentialsToGetAccessToThePortal()
         {
-            //var json = JObject.Parse(File.ReadAllText("../Tests/Utilities/Text.json"));
-            //using (StreamReader file = File.OpenText("../Tests/Utilities/Text.json"))
-            //using (JsonTextReader reader = new JsonTextReader(file))
-            Assert.True(po.forgot.Text.Contains(read.jsonReader("", "")), "Text not displayed");
+            Assert.True(po.forgot.Text.Contains(read.jsonReader("../Tests/Utilities/Data.json", "forgot")), "Text not displayed");
             Assert.True(po.otherlogin.Text.Contains("Other login options"), "Text not displayed");
             Assert.True(po.signup.Text.Contains("Sign Up"), "Text not displayed");
             Assert.True(po.noaccount.Text.Contains("Don't have an account?"), "Text not displayed");

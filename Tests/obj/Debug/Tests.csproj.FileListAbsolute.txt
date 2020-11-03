@@ -71,3 +71,4 @@ C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\obj\Debug\Tests
 C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\obj\Debug\Tests.csproj.CopyComplete
 C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\obj\Debug\Tests.dll
 C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\obj\Debug\Tests.pdb
+C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\obj\Debug\Tests.csprojAssemblyReference.cache
