@@ -31,3 +31,9 @@ Scenario: Login and change name
 	When I click login
 	And I click on Profile
 	Then I see the changes
+
+@Chrome
+@Basic
+Scenario: Login and Create XS Product in SX
+    Given I am on the Sub External page
+	And I create a billing account

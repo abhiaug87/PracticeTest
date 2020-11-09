@@ -3,5 +3,14 @@
   "password": "Bhaiya83",
   "forgot": "Forgot?",
   "name": "Abhishek",
-  "url": "https://www.asb.co.nz/"
+  "url": "https://www.asb.co.nz/",
+  "extsub": "https://subscription1.xero-test.com/subscription/list",
+  "usr": "ak@test.xero.com",
+  "pas": "aaaa1111",
+  "orgname": "Test 1",
+  "work": "API Testing",
+  "number": "000123456",
+  "expiry": "12/25",
+  "security": "123",
+  "bsb": "110000"
 }

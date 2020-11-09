@@ -351,5 +351,57 @@ namespace Tests.PageObjects
 
         [FindsBy(How = How.Id, Using = "main-menu-button")]
         public IWebElement menubtn;
+
+        [FindsBy(How = How.Id, Using = "xl-form-email")]
+        public IWebElement email;
+
+        [FindsBy(How = How.Id, Using = "xl-form-password")]
+        public IWebElement pas;
+
+        [FindsBy(How = How.Id, Using = "xl-form-submit")]
+        public IWebElement submit;
+
+        [FindsBy(How = How.CssSelector, Using = "button.xui-button.xui-actions--primary.xui-actions--button-spacing.xui-button-create.xui-button-medium")]
+        public IWebElement subscription;
+
+        [FindsBy(How = How.Id, Using = "text-1022-inputEl")]
+        public IWebElement orgname;
+
+        [FindsBy(How = How.Id, Using = "industrysearchcombofield-1025-inputEl")]
+        public IWebElement work;
+
+        [FindsBy(How = How.CssSelector, Using = "button.xui-button.xui-button-borderless-main.xui-button-small")]
+        public IWebElement apply;
+
+        [FindsBy(How = How.Id, Using = "button.xui-button.xui-button-main.xui-button-medium.xui-button-fullwidth")]
+        public IWebElement addon;
+
+        [FindsBy(How = How.Name, Using = "button.xui-button.xui-button-main.xui-button-medium.xui-button-fullwidth")]
+        public IWebElement cont;
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div[2]/div/div[2]/div[1]/div/div/div[8]/label/span/div/span/span")]
+        public IWebElement create;
+
+        [FindsBy(How = How.ClassName, Using = "Continue to review & pay")]
+        public IWebElement review;
+
+        [FindsBy(How = How.CssSelector, Using = "span#accountPaymentTypeCc.xui-toggle--label")]
+        public IWebElement cc;
+
+        [FindsBy(How = How.CssSelector, Using = "span#accountPaymentTypeDd.xui-toggle--label")]
+        public IWebElement dd;
+
+        [FindsBy(How = How.Id, Using = "ddAccountNumber")]
+        public IWebElement number;
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div/form/span[2]/span/input")]
+        public IWebElement expiry;
+
+        [FindsBy(How = How.XPath, Using = "ddBsbNumber")]
+        public IWebElement bsb;
+
+        [FindsBy(How = How.XPath, Using = "payerName")]
+        public IWebElement name;
     }
+
 }

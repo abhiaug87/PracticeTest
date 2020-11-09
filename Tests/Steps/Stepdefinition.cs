@@ -41,7 +41,8 @@ namespace Tests.Steps
         public void WhenIClickOnProfile()
         {
             Driver.SwitchTo().Frame(0);
-            po.profile.SendKeys(Keys.Enter + Keys.Tab + Keys.Enter);
+            Sleep(2);
+            po.profile.SendKeys(Keys.Enter + Keys.Enter + Keys.Tab + Keys.Enter);
             wait.Until(Driver => Driver.FindElement(By.Id("anti_sizzle_do_not_remove")));
             Assert.True(po.personal.Displayed, "Element is not displayed");
             Driver.SwitchTo().Frame("ASB.58c9b2b87b9d150d1c7dd287_v1.1.8_58d98a132d7fb9101018fc3a-1");
@@ -246,6 +247,41 @@ namespace Tests.Steps
         {
          po.viewprod.Click();
         }
+
+        [Given(@"I am on the Sub External page")]
+        public void GivenIAmOnTheSubEXternalPage()
+        {
+           // Driver.Navigate().GoToUrl(CommonConstants.ApplicationSettings.XS);
+            Driver.Navigate().GoToUrl(read.jsonReader("../Tests/Utilities/Data.json", "extsub"));
+        }
+
+        [Given(@"I create a billing account")]
+        public void GivenICreateABillingAccount()
+        {
+            po.email.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "usr"));
+            po.pas.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "pas"));
+            po.submit.Click();
+            po.subscription.Click();
+            po.orgname.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "orgname"));
+            po.work.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "work"));
+            po.work.SendKeys(Keys.Tab + Keys.Tab + Keys.Tab + Keys.Tab + Keys.Tab + Keys.Enter);
+            po.apply.SendKeys(Keys.Tab + Keys.Enter);
+            po.apply.SendKeys(Keys.Tab + Keys.Enter);
+            po.create.Click();
+            po.apply.SendKeys(Keys.Tab + Keys.Enter);
+            po.cc.Click();
+            Driver.SwitchTo().Frame(0);
+            Driver.SwitchTo().Frame("__privateStripeFrame4017");
+            po.name.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "name"));
+            Driver.SwitchTo().Frame(1);
+            po.bsb.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "bsb"));
+            Driver.SwitchTo().Frame(2);
+            po.number.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "number"));
+            po.number.SendKeys(Keys.Tab + Keys.Control + Keys.Space + Keys.Tab + Keys.Enter);
+            
+
+        }
+
 
     }
 }
