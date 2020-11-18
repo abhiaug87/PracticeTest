@@ -12,6 +12,7 @@ using System.IO;
 using Utf8Json;
 using System.Data;
 using System.Data.Linq;
+using System.Linq;
 
 namespace Tests.Steps
 {
@@ -296,56 +297,56 @@ namespace Tests.Steps
             System.Collections.Generic.IList<IWebElement> tableRow = po.table.FindElements(By.TagName("td"));
             for (int i = 0; i < tableRow.Count; i++)
             {
-                if (tableRow[0].Text.Contains("Apple") && tableRow[1].Text.Contains("Never"))
+                if (tableRow[0].Text.Contains(table.Rows[0][0]) && tableRow[1].Text.Contains(table.Rows[0][1]))
                 {
                     dataexists = true;
                     break;
                 }
                 Assert.True(dataexists, "data does not exist");
 
-                if (tableRow[4].Text.Contains("Demo Regular") && tableRow[5].Text.Contains("Never"))
+                if (tableRow[4].Text.Contains(table.Rows[1][0]) && tableRow[5].Text.Contains(table.Rows[1][1]))
                 {
                     dataexists = true;
                     break;
                 }
                 Assert.True(dataexists, "data does not exist");
 
-                if (tableRow[8].Text.Contains("Learn") && tableRow[9].Text.Contains("Never"))
+                if (tableRow[8].Text.Contains(table.Rows[2][0]) && tableRow[9].Text.Contains(table.Rows[2][1]))
                 {
                     dataexists = true;
                     break;
                 }
                 Assert.True(dataexists, "data does not exist");
 
-                if (tableRow[12].Text.Contains("Practice") && tableRow[13].Text.Contains("Never"))
+                if (tableRow[12].Text.Contains(table.Rows[3][0]) && tableRow[13].Text.Contains(table.Rows[3][1]))
                 {
                     dataexists = true;
                     break;
                 }
                 Assert.True(dataexists, "data does not exist");
 
-                if (tableRow[16].Text.Contains("Premium") && tableRow[17].Text.Contains("Always"))
+                if (tableRow[16].Text.Contains(table.Rows[4][0]) && tableRow[17].Text.Contains(table.Rows[4][1]))
                 {
                     dataexists = true;
                     break;
                 }
                 Assert.True(dataexists, "data does not exist");
 
-                if (tableRow[20].Text.Contains("Standard") && tableRow[21].Text.Contains("Always"))
+                if (tableRow[20].Text.Contains(table.Rows[5][0]) && tableRow[21].Text.Contains(table.Rows[5][1]))
                 {
                     dataexists = true;
                     break;
                 }
                 Assert.True(dataexists, "data does not exist");
 
-                if (tableRow[24].Text.Contains("Starter") && tableRow[25].Text.Contains("Always"))
+                if (tableRow[24].Text.Contains(table.Rows[6][0]) && tableRow[25].Text.Contains(table.Rows[6][1]))
                 {
                     dataexists = true;
                     break;
                 }
                 Assert.True(dataexists, "data does not exist");
 
-                if (tableRow[28].Text.Contains("Trial") && tableRow[29].Text.Contains("Never"))
+                if (tableRow[28].Text.Contains(table.Rows[7][0]) && tableRow[29].Text.Contains(table.Rows[7][1]))
                 {
                     dataexists = true;
                     break;
