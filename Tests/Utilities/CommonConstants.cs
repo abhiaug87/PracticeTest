@@ -6,7 +6,7 @@ namespace Tests.Utilities
     {
         public static class DriverSettings
         {
-            public static string filepath = Path.GetFileNameWithoutExtension("chromedriver.exe");
+            public static string filepath = Path.GetFileNameWithoutExtension("chromedriver.exe"); // Copy the chromedriver folder from git & pasteit under "C:\Users\yourusername\AppData\Local\Temp" for the web browser to initiate
             //public static string BinaryLocationChrome = @"C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\Drivers\chromedriver_win32";
             public static string BinaryLocationChrome = filepath;
 

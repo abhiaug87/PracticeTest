@@ -10,6 +10,7 @@ using System;
 using Newtonsoft.Json;
 using System.IO;
 using Utf8Json;
+using System.Data;
 
 namespace Tests.Steps
 {
@@ -251,8 +252,13 @@ namespace Tests.Steps
         [Given(@"I am on the Sub External page")]
         public void GivenIAmOnTheSubEXternalPage()
         {
-           // Driver.Navigate().GoToUrl(CommonConstants.ApplicationSettings.XS);
             Driver.Navigate().GoToUrl(read.jsonReader("../Tests/Utilities/Data.json", "extsub"));
+        }
+
+        [Given(@"I am on the Product App page")]
+        public void GivenIAmOnTheProductAppPage()
+        {
+            Driver.Navigate().GoToUrl(read.jsonReader("../Tests/Utilities/Data.json", "prodapp"));
         }
 
         [Given(@"I create a billing account")]
@@ -267,19 +273,53 @@ namespace Tests.Steps
             po.work.SendKeys(Keys.Tab + Keys.Tab + Keys.Tab + Keys.Tab + Keys.Tab + Keys.Enter);
             po.apply.SendKeys(Keys.Tab + Keys.Enter);
             po.apply.SendKeys(Keys.Tab + Keys.Enter);
-            po.create.Click();
+            po.existing.Click();
             po.apply.SendKeys(Keys.Tab + Keys.Enter);
-            po.cc.Click();
-            Driver.SwitchTo().Frame(0);
-            Driver.SwitchTo().Frame("__privateStripeFrame4017");
-            po.name.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "name"));
-            Driver.SwitchTo().Frame(1);
-            po.bsb.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "bsb"));
-            Driver.SwitchTo().Frame(2);
-            po.number.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "number"));
-            po.number.SendKeys(Keys.Tab + Keys.Control + Keys.Space + Keys.Tab + Keys.Enter);
-            
+            po.apply.SendKeys(Keys.Tab + Keys.Enter);
+        }
 
+        [When(@"I login to the app")]
+        public void GivenILoginToTheApp()
+        {
+            po.email.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "usr"));
+            po.pas.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "pas"));
+            po.submit.Click();
+            po.ellipsis.Click();
+            po.viewplans.Click();
+        }
+
+        [Then(@"I am able to see the (.*), (.*), (.*) rows:")]
+        public void ThenIAmAbleToSeeTheFollowingRows(string Name, string Purchasable, string Partner, Table table)
+        {
+            bool dataexists = false;
+            System.Collections.Generic.IList<IWebElement> tableRow = po.table.FindElements(By.TagName("td"));
+            for (int i = 0; i < tableRow.Count; i++)
+            {
+                if (tableRow[0].Text.Contains("Apple") && tableRow[1].Text.Contains("Never"))
+                {
+                    dataexists = true;
+                    break;
+                }
+            }
+            Assert.True(dataexists, "data does not exist.");
+        }
+
+        [Given(@"I login to SX")]
+        public void GivenILoginToSX()
+        {
+            Driver.Navigate().GoToUrl(read.jsonReader("../Tests/Utilities/Data.json", "sx"));
+        }
+
+        [Given(@"I can see the Billing Account of my org")]
+        public void GivenICanSeeTheBillingAccountOfMyOrg()
+        {
+            po.email.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "usr"));
+            po.pas.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "pas"));
+            po.submit.Click();
+            //Sleep(2);
+           // po.searchfield.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "usr"));
+            po.logoutlink.Click();
+            po.logoutbtn.Click();
         }
 
 

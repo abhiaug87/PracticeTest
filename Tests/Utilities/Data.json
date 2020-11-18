@@ -5,12 +5,16 @@
   "name": "Abhishek",
   "url": "https://www.asb.co.nz/",
   "extsub": "https://subscription1.xero-test.com/subscription/list",
-  "usr": "ak@test.xero.com",
+  "sx": "https://sub.cdo1.xero-test.com/Dashboard/aube",
+  "prodapp": "https://product1.billing.xero-test.com/",
+  "usr": "subxero.automation@test.xero.com",
   "pas": "aaaa1111",
-  "orgname": "Test 1",
+  "orgname": "Test 3",
   "work": "API Testing",
   "number": "000123456",
   "expiry": "12/25",
   "security": "123",
-  "bsb": "110000"
+  "bsb": "110000",
+  "cardnumber": "4111111111111111",
+  "region": "Australia"
 }

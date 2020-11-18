@@ -37,3 +37,24 @@ Scenario: Login and change name
 Scenario: Login and Create XS Product in SX
     Given I am on the Sub External page
 	And I create a billing account
+	And I login to SX
+	And I can see the Billing Account of my org
+
+@Chrome
+@Basic
+Scenario: Assert Product App Catalogue Page
+    Given I am on the Product App page
+	When I login to the app
+	Then I am able to see the <Name>, <Purchasable>, <Partner> rows:
+	| Name          | Purchasable Type | Partner Only |
+	| Apple         | Never            |              |
+	| Demo Regular  | Never            |              |
+	| Learn         | Never            |              |
+	| Practice      | Never            |              |
+	| Premium       | Always           |              |
+	| Standard      | Always           |              |
+	| Starter       | Always           |              |
+	| Trial         | Never            |              |
+
+
+

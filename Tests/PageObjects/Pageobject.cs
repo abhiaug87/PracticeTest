@@ -391,7 +391,7 @@ namespace Tests.PageObjects
         [FindsBy(How = How.CssSelector, Using = "span#accountPaymentTypeDd.xui-toggle--label")]
         public IWebElement dd;
 
-        [FindsBy(How = How.Id, Using = "ddAccountNumber")]
+        [FindsBy(How = How.XPath, Using = "/html/body/div/form/span[2]/div/div[2]/span/input")]
         public IWebElement number;
 
         [FindsBy(How = How.XPath, Using = "/html/body/div/form/span[2]/span/input")]
@@ -402,6 +402,30 @@ namespace Tests.PageObjects
 
         [FindsBy(How = How.XPath, Using = "payerName")]
         public IWebElement name;
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div[2]/div/div[2]/div[1]/div/div/div[2]/label")]
+        public IWebElement existing;
+
+        [FindsBy(How = How.CssSelector, Using = "input#keywords.x-form-text.x-form-field")]
+        public IWebElement searchfield;
+
+        [FindsBy(How = How.Id, Using = "submitButton")]
+        public IWebElement srcbutton;
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div[1]/div/ul/li[3]/a")]
+        public IWebElement logoutlink;
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div[5]/div[2]/div[2]/div/div/div/div/div[1]/table/tbody/tr/td[1]/table/tbody/tr/td[1]/em/div/button")]
+        public IWebElement logoutbtn;
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div[2]/div/div/div/div[2]/div/table/tbody/tr[6]/td[4]/div/button")]
+        public IWebElement ellipsis;
+
+        [FindsBy(How = How.LinkText, Using = "View Plans")]
+        public IWebElement viewplans;
+
+        [FindsBy(How = How.XPath, Using = "//table")]
+        public IWebElement table;
     }
 
 }

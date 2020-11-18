@@ -179,6 +179,69 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.Given("I am on the Sub External page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 39
  testRunner.And("I create a billing account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And("I login to SX", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("I can see the Billing Account of my org", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Assert Product App Catalogue Page")]
+        [NUnit.Framework.CategoryAttribute("Chrome")]
+        [NUnit.Framework.CategoryAttribute("Basic")]
+        public virtual void AssertProductAppCataloguePage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assert Product App Catalogue Page", null, new string[] {
+                        "Chrome",
+                        "Basic"});
+#line 45
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 46
+    testRunner.Given("I am on the Product App page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 47
+ testRunner.When("I login to the app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Purchasable Type",
+                        "Partner Only"});
+            table1.AddRow(new string[] {
+                        "Apple",
+                        "Never",
+                        ""});
+            table1.AddRow(new string[] {
+                        "Demo Regular",
+                        "Never",
+                        ""});
+            table1.AddRow(new string[] {
+                        "Learn",
+                        "Never",
+                        ""});
+            table1.AddRow(new string[] {
+                        "Practice",
+                        "Never",
+                        ""});
+            table1.AddRow(new string[] {
+                        "Premium",
+                        "Always",
+                        ""});
+            table1.AddRow(new string[] {
+                        "Standard",
+                        "Always",
+                        ""});
+            table1.AddRow(new string[] {
+                        "Starter",
+                        "Always",
+                        ""});
+            table1.AddRow(new string[] {
+                        "Trial",
+                        "Never",
+                        ""});
+#line 48
+ testRunner.Then("I am able to see the <Name>, <Purchasable>, <Partner> rows:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
