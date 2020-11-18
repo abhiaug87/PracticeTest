@@ -241,7 +241,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "Never",
                         ""});
 #line 48
- testRunner.Then("I am able to see the <Name>, <Purchasable>, <Partner> rows:", ((string)(null)), table1, "Then ");
+ testRunner.Then("I am able to see the rows:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

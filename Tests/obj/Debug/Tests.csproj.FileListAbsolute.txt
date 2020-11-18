@@ -67,6 +67,7 @@ C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\bin\Debug\Syste
 C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\bin\Debug\Utf8Json.xml
 C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\bin\Debug\WebDriver.xml
 C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\bin\Debug\WebDriver.Support.xml
+C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\obj\Debug\Tests.csprojAssemblyReference.cache
 C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\obj\Debug\Tests.csproj.CoreCompileInputs.cache
 C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\obj\Debug\Tests.csproj.CopyComplete
 C:\Users\abhishek.kulkarni\My Folder\Practice\PracticeTest\Tests\obj\Debug\Tests.dll

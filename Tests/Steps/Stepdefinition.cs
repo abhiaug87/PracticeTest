@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using System.IO;
 using Utf8Json;
 using System.Data;
+using System.Data.Linq;
 
 namespace Tests.Steps
 {
@@ -288,8 +289,8 @@ namespace Tests.Steps
             po.viewplans.Click();
         }
 
-        [Then(@"I am able to see the (.*), (.*), (.*) rows:")]
-        public void ThenIAmAbleToSeeTheFollowingRows(string Name, string Purchasable, string Partner, Table table)
+        [Then(@"I am able to see the rows:")]
+        public void ThenIAmAbleToSeeTheFollowingRows(Table table)
         {
             bool dataexists = false;
             System.Collections.Generic.IList<IWebElement> tableRow = po.table.FindElements(By.TagName("td"));
@@ -300,8 +301,57 @@ namespace Tests.Steps
                     dataexists = true;
                     break;
                 }
+                Assert.True(dataexists, "data does not exist");
+
+                if (tableRow[4].Text.Contains("Demo Regular") && tableRow[5].Text.Contains("Never"))
+                {
+                    dataexists = true;
+                    break;
+                }
+                Assert.True(dataexists, "data does not exist");
+
+                if (tableRow[8].Text.Contains("Learn") && tableRow[9].Text.Contains("Never"))
+                {
+                    dataexists = true;
+                    break;
+                }
+                Assert.True(dataexists, "data does not exist");
+
+                if (tableRow[12].Text.Contains("Practice") && tableRow[13].Text.Contains("Never"))
+                {
+                    dataexists = true;
+                    break;
+                }
+                Assert.True(dataexists, "data does not exist");
+
+                if (tableRow[16].Text.Contains("Premium") && tableRow[17].Text.Contains("Always"))
+                {
+                    dataexists = true;
+                    break;
+                }
+                Assert.True(dataexists, "data does not exist");
+
+                if (tableRow[20].Text.Contains("Standard") && tableRow[21].Text.Contains("Always"))
+                {
+                    dataexists = true;
+                    break;
+                }
+                Assert.True(dataexists, "data does not exist");
+
+                if (tableRow[24].Text.Contains("Starter") && tableRow[25].Text.Contains("Always"))
+                {
+                    dataexists = true;
+                    break;
+                }
+                Assert.True(dataexists, "data does not exist");
+
+                if (tableRow[28].Text.Contains("Trial") && tableRow[29].Text.Contains("Never"))
+                {
+                    dataexists = true;
+                    break;
+                }
+                Assert.True(dataexists, "data does not exist");
             }
-            Assert.True(dataexists, "data does not exist.");
         }
 
         [Given(@"I login to SX")]
