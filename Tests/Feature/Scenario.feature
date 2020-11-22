@@ -45,8 +45,8 @@ Scenario: Login and Create XS Product in SX
 Scenario: Assert Product App Catalogue Page
     Given I am on the Product App page
 	When I login to the app
-	Then I am able to see the rows:
-	| Name          | Purchasable Type | Partner Only |
+	Then I am able to see the <Name>, <PurchasableType> rows:
+	| Name          | PurchasableType  | PartnerOnly  |
 	| Apple         | Never            |              |
 	| Demo Regular  | Never            |              |
 	| Learn         | Never            |              |
@@ -54,7 +54,7 @@ Scenario: Assert Product App Catalogue Page
 	| Premium       | Always           |              |
 	| Standard      | Always           |              |
 	| Starter       | Always           |              |
-	| Trial         | Never            |              |
+	| Trial         | Never            |              | 
 
 
 

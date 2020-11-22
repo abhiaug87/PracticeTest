@@ -1,4 +1,7 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
+using System;
+using System.Drawing.Imaging;
 using System.Threading;
 
 namespace Tests.Steps

@@ -206,8 +206,8 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Purchasable Type",
-                        "Partner Only"});
+                        "PurchasableType",
+                        "PartnerOnly"});
             table1.AddRow(new string[] {
                         "Apple",
                         "Never",
@@ -241,7 +241,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "Never",
                         ""});
 #line 48
- testRunner.Then("I am able to see the rows:", ((string)(null)), table1, "Then ");
+ testRunner.Then("I am able to see the <Name>, <PurchasableType> rows:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

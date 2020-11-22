@@ -14,6 +14,13 @@ namespace Tests.Utilities
             public static int DefaultWaitTime = 3000;
         }
 
+        public class Credentials
+        {
+            public static string Name { get; set; }
+            public static string PurchasableType { get; set; }
+            public static string PartnerOnly { get; set; }
+        }
+
         public class ApplicationSettings
         {
             public static string BaseUrl = "https://au.unleashedsoftware.com/v2/Account/LogOn";

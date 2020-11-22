@@ -9,10 +9,10 @@ using OpenQA.Selenium.Interactions;
 using System;
 using Newtonsoft.Json;
 using System.IO;
-using Utf8Json;
 using System.Data;
 using System.Data.Linq;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Tests.Steps
 {
@@ -33,9 +33,11 @@ namespace Tests.Steps
         [When(@"I click login")]
         public void WhenIClickLogin()
         {
+
             po.loginbtn.Click();
             po.usr.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "username"));
             po.pass.SendKeys(read.jsonReader("../Tests/Utilities/Data.json", "password"));
+            //Assert.IsTrue(po.next.Text.Contains(read.jsonReader("../Tests/Utilities/Data.json", "orgname")), "data does not match");
             po.next.Click();
             wait.Until(Driver => Driver.FindElement(By.XPath("//*[@id='layout']/tbody/tr[1]/td[1]/div")));
         }
@@ -290,69 +292,20 @@ namespace Tests.Steps
             po.viewplans.Click();
         }
 
-        [Then(@"I am able to see the rows:")]
-        public void ThenIAmAbleToSeeTheFollowingRows(Table table)
+        [Then(@"I am able to see the (.*), (.*) rows:")]
+        public void ThenIAmAbleToSeeTheFollowingRows(string Name, string PurchasableType, Table table)
         {
             bool dataexists = false;
-            System.Collections.Generic.IList<IWebElement> tableRow = po.table.FindElements(By.TagName("td"));
-            for (int i = 0; i < tableRow.Count; i++)
+            IList<IWebElement> row = po.table.FindElements(By.TagName("tr"));
+            foreach(IWebElement t in row )
             {
-                if (tableRow[0].Text.Contains(table.Rows[0][0]) && tableRow[1].Text.Contains(table.Rows[0][1]))
+                if(t.Text.Contains(Name) )
                 {
-                    dataexists = true;
                     break;
                 }
-                Assert.True(dataexists, "data does not exist");
-
-                if (tableRow[4].Text.Contains(table.Rows[1][0]) && tableRow[5].Text.Contains(table.Rows[1][1]))
-                {
-                    dataexists = true;
-                    break;
-                }
-                Assert.True(dataexists, "data does not exist");
-
-                if (tableRow[8].Text.Contains(table.Rows[2][0]) && tableRow[9].Text.Contains(table.Rows[2][1]))
-                {
-                    dataexists = true;
-                    break;
-                }
-                Assert.True(dataexists, "data does not exist");
-
-                if (tableRow[12].Text.Contains(table.Rows[3][0]) && tableRow[13].Text.Contains(table.Rows[3][1]))
-                {
-                    dataexists = true;
-                    break;
-                }
-                Assert.True(dataexists, "data does not exist");
-
-                if (tableRow[16].Text.Contains(table.Rows[4][0]) && tableRow[17].Text.Contains(table.Rows[4][1]))
-                {
-                    dataexists = true;
-                    break;
-                }
-                Assert.True(dataexists, "data does not exist");
-
-                if (tableRow[20].Text.Contains(table.Rows[5][0]) && tableRow[21].Text.Contains(table.Rows[5][1]))
-                {
-                    dataexists = true;
-                    break;
-                }
-                Assert.True(dataexists, "data does not exist");
-
-                if (tableRow[24].Text.Contains(table.Rows[6][0]) && tableRow[25].Text.Contains(table.Rows[6][1]))
-                {
-                    dataexists = true;
-                    break;
-                }
-                Assert.True(dataexists, "data does not exist");
-
-                if (tableRow[28].Text.Contains(table.Rows[7][0]) && tableRow[29].Text.Contains(table.Rows[7][1]))
-                {
-                    dataexists = true;
-                    break;
-                }
-                Assert.True(dataexists, "data does not exist");
             }
+            Assert.IsTrue(dataexists, "data does not match");
+            //Assert.AreEqual(table.Contains(CommonConstants.Credentials.Name), tableRow.Contains())
         }
 
         [Given(@"I login to SX")]
