@@ -9,6 +9,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 using System.IO;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace Tests.Utilities
 {
@@ -29,10 +30,10 @@ namespace Tests.Utilities
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
             {
+                string pathfile = Path.Combine(TestContext.CurrentContext.WorkDirectory + @"\\Screenshot", "Screenshot.JPG" +"_" +
+                      DateTime.Now.ToString("(dd_MMMM_hh_mm_ss_tt)"));
                 var screenshot = Driver.TakeScreenshot();
-                screenshot.SaveAsFile("C:\\Users\\abhishek.kulkarni\\My Folder\\Practice\\PracticeTest\\Tests\\Screenshot\\Screenshot.JPG", ScreenshotImageFormat.Jpeg);
-
-
+                screenshot.SaveAsFile(pathfile, ScreenshotImageFormat.Jpeg);
             }
             Driver.Close();
             Driver.Quit();
